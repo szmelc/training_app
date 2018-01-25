@@ -7,6 +7,7 @@ end
 
 
 gem 'activeadmin'
+gem 'awesome_print', require: 'ap'
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
 gem 'bootstrap-sass'
 gem 'cancancan', '~> 2.1', '>= 2.1.3'
