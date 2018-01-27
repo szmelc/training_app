@@ -8,7 +8,8 @@ class User < ApplicationRecord
   before_save :send_welcome_email
 
   def send_welcome_email
-    puts 'Sending welcome email...'
-    WelcomeEmailWorker.perform_in(10) if self.confirmed_at_changed?
+    @user = self
+    # puts 'Sending welcome email...'
+    WelcomeEmailWorker.perform_in(2, @user) if self.confirmed_at_changed?
   end
 end
