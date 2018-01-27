@@ -16,14 +16,15 @@
               = f.label :email, class: 'col-sm-2 control-label'
               .col-sm-10
                 = f.email_field :email, class: 'form-control'
-            .form-group.row
-              = f.label :password, class: 'col-sm-2 control-label'
-              .col-sm-10
-                = f.password_field :password, class: 'form-control'
-            .form-group.row
-              = f.label :password_confirmation,'Re-enter Password', class: 'col-sm-2 control-label'
-              .col-sm-10
-                = f.password_field :password_confirmation, class: 'form-control'
+            - if resource.is_not_google_account?
+              .form-group.row
+                = f.label :password, class: 'col-sm-2 control-label'
+                .col-sm-10
+                  = f.password_field :password, class: 'form-control'
+              .form-group.row
+                = f.label :password_confirmation,'Re-enter Password', class: 'col-sm-2 control-label'
+                .col-sm-10
+                  = f.password_field :password_confirmation, class: 'form-control'
           .col-sm-6
             .form-group.row
               = f.label :bio, class: 'col-sm-2 control-label'
@@ -44,10 +45,6 @@
                       = f.check_box :remove_avatar
                 = f.file_field :avatar
                 = f.hidden_field :avatar_cache
-            .form-group.row
-              = f.label :current_password, 'Current password', class: 'col-sm-2 control-label'
-              .col-sm-10
-                = f.password_field :current_password, class: 'form-control'
           .form-actions
             .row
               .col-sm-12

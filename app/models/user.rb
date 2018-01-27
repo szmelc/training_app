@@ -14,13 +14,20 @@ class User < ApplicationRecord
     'Head of Technology'
   ]
 
+  def is_not_google_account?
+    provider != 'google_oauth2'
+  end
+
   def self.from_omniauth(access_token)
-      data = access_token.info
-      user = User.where(email: data['email']).first
+      data = access_token
+      user = User.where(email: data['info']['email']).first
       unless user
-          user = User.create(name: data['name'],
-             email: data['email'],
-             password: Devise.friendly_token[0,20]
+          user = User.create(
+            provider: data['provider'],
+            uid: data['uid'],
+            name: data['info']['name'],
+            email: data['info']['email'],
+            password: Devise.friendly_token[0,20]
           )
       end
       user
