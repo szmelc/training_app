@@ -1,0 +1,17 @@
+%nav.navbar.navbar-default
+  .container
+    .navbar-header
+      %button{ :type => 'button', :class => 'navbar-toggle collapsed', :data => { :toggle => 'collapse', :target => '#bs-example-navbar-collapse-1'  } }
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      = link_to "TrainingApp", root_path, class: "navbar-brand"
+    .div.collapse.navbar-collapse#bs-example-navbar-collapse-1
+      %ul.nav.navbar-nav.navbar-right
+        %li.active
+          %li= link_to 'Main Page', root_path
+          - if user_signed_in?
+            %li= link_to current_user.name, user_path(current_user)
+            %li= link_to 'Edit', edit_user_registration_path
+            %li= link_to 'Sign out', destroy_user_session_path, method: :delete
