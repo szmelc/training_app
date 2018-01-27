@@ -1,4 +1,180 @@
-= user.name
-= user.bio
-= user.country
-= user.title
+%hr/
+.container
+  .row
+    .col-sm-10
+      %h1= @user.name
+    .col-sm-2
+      %img.img-circle.img-responsive{ src: "http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100", title: "Avatar"}/
+  .row
+    .col-sm-3
+      %ul.list-group
+        = render 'profile_info'
+      = render 'website'
+      = render 'activity'
+      / .panel.panel-default
+      /   .panel-heading Social Media
+      /   .panel-body
+      /     %i.fa.fa-facebook.fa-2x
+      /     %i.fa.fa-github.fa-2x
+      /     %i.fa.fa-twitter.fa-2x
+      /     %i.fa.fa-pinterest.fa-2x
+      /     %i.fa.fa-google-plus.fa-2x
+    .col-sm-9
+      = render 'recent_posts'
+      %ul#myTab.nav.nav-tabs
+        %li.active
+          %a{"data-toggle" => "tab", :href => "#home"} Home
+        %li
+          %a{"data-toggle" => "tab", :href => "#settings"} Settings
+      .tab-content
+        #home.tab-pane.active
+          .table-responsive
+            %table.table.table-hover
+              %thead
+                %tr
+                  %th #
+                  %th Label 1
+                  %th Label 2
+                  %th Label 3
+                  %th Label
+                  %th Label
+                  %th Label
+              %tbody#items
+                %tr
+                  %td 1
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 2
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 3
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 4
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 5
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 6
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 7
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 8
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 9
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                %tr
+                  %td 10
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+                  %td Table cell
+            %hr/
+            .row
+              .col-md-4.col-md-offset-4.text-center
+                %ul#myPager.pagination
+          / /table-resp
+        / /tab-pane
+        #settings.tab-pane
+          %hr/
+          %form#registrationForm.form{:action => "##", :method => "post"}
+            .form-group
+              .col-xs-6
+                %label{:for => "first_name"}
+                  %h4 First name
+                %input#first_name.form-control{:name => "first_name", :placeholder => "first name", :title => "enter your first name if any.", :type => "text"}/
+            .form-group
+              .col-xs-6
+                %label{:for => "last_name"}
+                  %h4 Last name
+                %input#last_name.form-control{:name => "last_name", :placeholder => "last name", :title => "enter your last name if any.", :type => "text"}/
+            .form-group
+              .col-xs-6
+                %label{:for => "phone"}
+                  %h4 Phone
+                %input#phone.form-control{:name => "phone", :placeholder => "enter phone", :title => "enter your phone number if any.", :type => "text"}/
+            .form-group
+              .col-xs-6
+                %label{:for => "mobile"}
+                  %h4 Mobile
+                %input#mobile.form-control{:name => "mobile", :placeholder => "enter mobile number", :title => "enter your mobile number if any.", :type => "text"}/
+            .form-group
+              .col-xs-6
+                %label{:for => "email"}
+                  %h4 Email
+                %input#email.form-control{:name => "email", :placeholder => "you@email.com", :title => "enter your email.", :type => "email"}/
+            .form-group
+              .col-xs-6
+                %label{:for => "email"}
+                  %h4 Location
+                %input#location.form-control{:placeholder => "somewhere", :title => "enter a location", :type => "email"}/
+            .form-group
+              .col-xs-6
+                %label{:for => "password"}
+                  %h4 Password
+                %input#password.form-control{:name => "password", :placeholder => "password", :title => "enter your password.", :type => "password"}/
+            .form-group
+              .col-xs-6
+                %label{:for => "password2"}
+                  %h4 Verify
+                %input#password2.form-control{:name => "password2", :placeholder => "password2", :title => "enter your password2.", :type => "password"}/
+            .form-group
+              .col-xs-12
+                %br/
+                %button.btn.btn-lg.btn-success{:type => "submit"}
+                  %i.glyphicon.glyphicon-ok-sign
+                  Save
+                %button.btn.btn-lg{:type => "reset"}
+                  %i.glyphicon.glyphicon-repeat
+                  Reset
