@@ -8,7 +8,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(
       :password,
       :password_confirmation,
-      :current_password,:email,
+      :current_password,
+      :email,
       :name,
       :country,
       :bio,
@@ -23,7 +24,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(
       :password,
       :password_confirmation,
-      :current_password,:email,
+      :current_password,
+      :email,
       :name,
       :country,
       :bio,
