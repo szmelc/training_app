@@ -3,11 +3,14 @@
   .row
     .col-sm-10
       %h1= @user.name
+      - if current_user == @user
+        = button_to 'Edit profile', edit_user_registration_path, class: 'btn btn-success', method: :get
     .col-sm-2
       = @user.avatar
   .row
     .col-sm-3
       = render 'profile_info'
+      = render 'bio'
       = render 'website'
       = render 'activity'
       / .panel.panel-default

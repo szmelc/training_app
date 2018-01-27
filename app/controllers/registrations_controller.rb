@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
 
     if @user.update_without_password(user_params)
       sign_in @user, :bypass => true
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render "edit"
     end
