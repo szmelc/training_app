@@ -1,13 +1,16 @@
-%li.list-group-item.text-muted Profile
-%li.list-group-item.text-right
-  %span.pull-left
-    %strong Country
-  = @user.country
-%li.list-group-item.text-right
-  %span.pull-left
-    %strong Title
-  = @user.title
-%li.list-group-item.text-right
-  %span.pull-left
-    %strong Joined
-  = @user.joined
+%ul.list-group
+  %li.list-group-item.text-muted Profile
+  - if user.country?
+    %li.list-group-item.text-right
+      %span.pull-left
+        %strong Country
+      = @user.country
+  - if user.title?
+    %li.list-group-item.text-right
+      %span.pull-left
+        %strong Title
+      = @user.title
+  %li.list-group-item.text-right
+    %span.pull-left
+      %strong Joined
+    = @user.joined

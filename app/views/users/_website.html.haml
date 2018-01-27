@@ -1,6 +1,7 @@
-.panel.panel-default
-  .panel-heading
-    Website
-    %i.fa.fa-link.fa-1x
-  .panel-body
-    = link_to @user.website, @user.website
+- if user.website?
+  .panel.panel-default
+    .panel-heading
+      Website
+      %i.fa.fa-link.fa-1x
+    .panel-body
+      = link_to @user.formatted_website, @user.website

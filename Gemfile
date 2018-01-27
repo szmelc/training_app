@@ -30,6 +30,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'omniauth-google-oauth2', '~> 0.4.1'
 gem 'pry'
 gem 'pry-rails'
+gem 'rmagick'
 gem 'rubocop', '~> 0.52.1'
 gem 'whenever', '~> 0.10.0'
 

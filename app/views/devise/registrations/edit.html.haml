@@ -1,0 +1,55 @@
+.container
+  .row
+    .col-sm-12
+      %h2
+        Edit
+        = resource_name.to_s.humanize.downcase
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, multipart: true }) do |f|
+        = devise_error_messages!
+        .form-inputs.row.col-sm-12
+          .col-sm-6
+            .form-group.row
+              = f.label :name, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.input_field :name, :autofocus => true, class: 'form-control'
+            .form-group.row
+              = f.label :email, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.email_field :email, class: 'form-control'
+            .form-group.row
+              = f.label :password, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.password_field :password, class: 'form-control'
+            .form-group.row
+              = f.label :password_confirmation,'Re-enter Password', class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.password_field :password_confirmation, class: 'form-control'
+          .col-sm-6
+            .form-group.row
+              = f.label :bio, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.text_area :bio, class: 'form-control'
+            .form-group.row
+              = f.label :title, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.input :title, collection: User::TITLES, class: 'form-control', label: false, selected: User::TITLES[0]
+            .form-group.row
+              = f.label :website, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.input :website, class: 'form-control', label: false
+                - if current_user.avatar.url.present?
+                  .form-group.row
+                    = image_tag(current_user.avatar.thumb.url)
+                    = f.label :remove_avatar do
+                      = f.check_box :remove_avatar
+                = f.file_field :avatar
+                = f.hidden_field :avatar_cache
+            .form-group.row
+              = f.label :current_password, 'Current password', class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.password_field :current_password, class: 'form-control'
+          .form-actions
+            .row
+              .col-sm-12
+                .pull-right
+                  = f.button :submit, 'Submit', class: 'btn btn-success'

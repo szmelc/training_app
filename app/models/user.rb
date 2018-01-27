@@ -1,11 +1,18 @@
 class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  mount_uploader :avatar, AvatarUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: %i[google_oauth2]
 
   before_save :send_welcome_email
+
+  TITLES = [
+    'Junior Ruby on Rails Developer',
+    'Ruby on Rails Developer',
+    'Senior Ruby on Rails Developer',
+    'Front-end Developer',
+    'Head of Technology'
+  ]
 
   def self.from_omniauth(access_token)
       data = access_token.info

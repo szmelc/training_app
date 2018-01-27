@@ -4,11 +4,10 @@
     .col-sm-10
       %h1= @user.name
     .col-sm-2
-      %img.img-circle.img-responsive{ src: "http://www.gravatar.com/avatar/28fd20ccec6865e2d5f0e1f4446eb7bf?s=100", title: "Avatar"}/
+      = @user.avatar
   .row
     .col-sm-3
-      %ul.list-group
-        = render 'profile_info'
+      = render 'profile_info'
       = render 'website'
       = render 'activity'
       / .panel.panel-default
