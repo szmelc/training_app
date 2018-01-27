@@ -25,4 +25,5 @@
   <% end %>
   </div>
   <div class="panel-footer"><%= render "devise/shared/links" %></div>
+  <%= link_to "Sign in with Google", user_google_oauth2_omniauth_authorize_path(:google_oauth2) %>
 </div>
