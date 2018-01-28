@@ -33,7 +33,7 @@ class CountrySelectInput < SimpleForm::Inputs::CollectionInput
     'United States',
     'Vatican',
     'Zanzibar'
-  ]
+  ].freeze
 
   POPULAR_COUNTRIES = [
     'Poland',
@@ -41,7 +41,7 @@ class CountrySelectInput < SimpleForm::Inputs::CollectionInput
     'Germany',
     'United Kingdom',
     'United States',
-  ]
+  ].freeze
 
   LIST = (POPULAR_COUNTRIES + ALL_COUNTRIES).uniq
 

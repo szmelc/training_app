@@ -4,7 +4,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: %i[google_oauth2]
 
-
   has_many :posts
 
   before_save :send_welcome_email
@@ -16,6 +15,9 @@ class User < ApplicationRecord
     'Front-end Developer',
     'Head of Technology'
   ]
+
+  validates :title, inclusion: { in: TITLES }
+  validates :country, inclusion: { in: CountrySelectInput::LIST }
 
   def is_not_google_account?
     provider != 'google_oauth2'
@@ -30,6 +32,8 @@ class User < ApplicationRecord
             uid: data['uid'],
             name: data['info']['name'],
             email: data['info']['email'],
+            country: 'Poland',
+            title: TITLES[0],
             password: Devise.friendly_token[0,20]
           )
       end
