@@ -3,8 +3,13 @@
   - if user.country?
     %li.list-group-item.text-right
       %span.pull-left
-        %strong Country
+        %strong Phone
       = @user.country
+  - if user.phone_number?
+    %li.list-group-item.text-right
+      %span.pull-left
+        %strong Country
+      = @user.phone_number
   - if user.title?
     %li.list-group-item.text-right
       %span.pull-left

@@ -16,6 +16,10 @@
               = f.label :email, class: 'col-sm-2 control-label'
               .col-sm-10
                 = f.email_field :email, class: 'form-control'
+            .form-group.row
+              = f.label :phone_number, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.input :phone_number, class: 'form-control', label: false
             - if resource.is_not_google_account?
               .form-group.row
                 = f.label :password, class: 'col-sm-2 control-label'
@@ -33,11 +37,15 @@
             .form-group.row
               = f.label :title, class: 'col-sm-2 control-label'
               .col-sm-10
-                = f.input :title, collection: User::TITLES, class: 'form-control', label: false, selected: User::TITLES[0]
+                = f.input :title, collection: User::TITLES, class: 'form-control', label: false
             .form-group.row
               = f.label :website, class: 'col-sm-2 control-label'
               .col-sm-10
                 = f.input :website, class: 'form-control', label: false
+            .form-group.row
+              = f.label :country, class: 'col-sm-2 control-label'
+              .col-sm-10
+                = f.input :country, as: :country_select, class: 'form-control', label: false
                 - if current_user.avatar.url.present?
                   .form-group.row
                     = image_tag(current_user.avatar.thumb.url)

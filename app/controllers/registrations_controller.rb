@@ -3,7 +3,7 @@ class RegistrationsController < Devise::RegistrationsController
     @user = User.find(current_user.id)
 
     if @user.update_without_password(user_params)
-      sign_in @user, :bypass => true
+      sign_in @user, :bypass_sign_in => true
       redirect_to user_path(@user)
     else
       render "edit"
@@ -22,6 +22,8 @@ class RegistrationsController < Devise::RegistrationsController
       :email,
       :bio,
       :title,
+      :country,
+      :phone_number,
       :website,
       :avatar,
       :avatar_cache,
