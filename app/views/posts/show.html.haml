@@ -1,0 +1,14 @@
+.row
+  .col-xs-10
+    %h1= @post.title
+  .col-xs-2.align-text-bottom
+    %p= @post.written_at
+%p= @post.content
+%h5= @post.author
+- if current_user.id == post.user_id
+  .btn.btn-danger
+    = link_to 'Destroy', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' }
+  .btn.btn-primary
+    = link_to 'Edit Post', edit_post_path(@post)
+
+

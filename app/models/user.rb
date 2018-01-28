@@ -4,6 +4,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: %i[google_oauth2]
 
+
+  has_many :posts
+
   before_save :send_welcome_email
 
   TITLES = [
