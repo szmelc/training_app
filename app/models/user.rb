@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :posts
 
   before_save :send_welcome_email
+  after_initialize :default_values
 
   TITLES = [
     'Junior Ruby on Rails Developer',
@@ -18,6 +19,11 @@ class User < ApplicationRecord
 
   validates :title, inclusion: { in: TITLES }
   validates :country, inclusion: { in: CountrySelectInput::LIST }
+
+  def default_values
+    self.title = TITLES[0]
+    self.country = 'Poland'
+  end
 
   def is_not_google_account?
     provider != 'google_oauth2'
