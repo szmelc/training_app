@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180128190506) do
+ActiveRecord::Schema.define(version: 20180129195334) do
+
+  create_table "daily_posts_counts", force: :cascade do |t|
+    t.date "date"
+    t.integer "count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
