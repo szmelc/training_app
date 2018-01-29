@@ -1,8 +1,6 @@
 set :output, "#{path}/log/cron.log"
 
-every 1.minute do
-  rake "db:reset"
-end
+
 
 # Use this file to easily define all of your cron jobs.
 #
@@ -19,8 +17,8 @@ end
 #   rake "some:great:rake:task"
 # end
 #
-every 4.days do
-  runner "User.new.send_welcome_email"
-end
+# every 4.days do
+#   runner "User.new.send_welcome_email"
+# end
 
 # Learn more: http://github.com/javan/whenever
