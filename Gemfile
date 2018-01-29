@@ -32,7 +32,7 @@ gem 'pry'
 gem 'pry-rails'
 gem 'rmagick'
 gem 'rubocop', '~> 0.52.1'
-gem 'whenever', '~> 0.10.0'
+gem 'whenever', require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
