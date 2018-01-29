@@ -1,7 +1,7 @@
 set :output, "#{path}/log/cron.log"
 
-every 1.day, at: '11:59 pm' do
-  rake "report:posts_daily"
+every 1.minute do
+  rake "report:posts_daily", environment: 'development'
 end
 
 # Use this file to easily define all of your cron jobs.
