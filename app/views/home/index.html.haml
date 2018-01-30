@@ -2,7 +2,9 @@
   .panel.panel-default
     .panel-heading
       %h5= link_to post.title, user_post_path(post.user_id, post)
-    .panel-content
+    .panel-content.post-content
       %p= post.content
+      .row.text-right.col-xs-offset-10
+        = link_to 'Read more...', user_post_path(post.user_id, post), class: 'read-more text-right'
 
 

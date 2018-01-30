@@ -5,8 +5,8 @@ namespace :generate do
     5.times do
       Post.create(
         user_id: 1,
-        title: "Post 3 days ago #{n}",
-        content: (0...100).map { ('a'..'z').to_a[rand(26)] }.join,
+        title: Faker::Team.name + ' sucks',
+        content: Cicero.paragraphs(4),
         created_at: Date.today - 3
         )
       n += 1
@@ -14,8 +14,8 @@ namespace :generate do
     4.times do
       Post.create(
         user_id: 1,
-        title: "Post 2 days ago #{n}",
-        content: (0...100).map { ('a'..'z').to_a[rand(26)] }.join,
+        title: Faker::RockBand.name,
+        content: Cicero.paragraphs(3),
         created_at: Date.today - 2
         )
       n += 1
@@ -23,8 +23,8 @@ namespace :generate do
     3.times do
       Post.create(
         user_id: 1,
-        title: "Post 1 day ago #{n}",
-        content: (0...100).map { ('a'..'z').to_a[rand(26)] }.join,
+        title: Faker::Team.name,
+        content: Cicero.paragraphs(5),
         created_at: Date.today - 1
         )
       n += 1
