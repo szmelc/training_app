@@ -7,4 +7,14 @@ namespace :report do
       date: Date.today
     )
   end
+
+  task posts_monthly: :environment do
+    desc 'counts how many posts have published monthly'
+    number_of_posts = ReportsQuery.new.monthly
+    MonthlyPostsCount.create(
+      count: number_of_posts,
+      month: Date.today.strftime("%B"),
+      date: Date.today
+    )
+  end
 end

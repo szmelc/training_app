@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180129195334) do
+ActiveRecord::Schema.define(version: 20180129210716) do
 
   create_table "daily_posts_counts", force: :cascade do |t|
     t.date "date"
     t.integer "count"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "monthly_posts_counts", force: :cascade do |t|
+    t.integer "count"
+    t.string "month"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.date "date"
   end
 
   create_table "posts", force: :cascade do |t|
