@@ -17,6 +17,8 @@ class User < ApplicationRecord
     'Head of Technology'
   ]
 
+  validates :name, presence: true
+  validates :email, presence: true
   validates :title, inclusion: { in: TITLES }
   validates :country, inclusion: { in: CountrySelectInput::LIST }
 

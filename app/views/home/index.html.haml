@@ -1,0 +1,8 @@
+- posts.each do |post|
+  .panel.panel-default
+    .panel-heading
+      %h5= link_to post.title, user_post_path(post.user_id, post)
+    .panel-content
+      %p= post.content
+
+
