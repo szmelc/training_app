@@ -6,5 +6,8 @@
       %p= post.content
       .row.text-right.col-xs-offset-10
         = link_to 'Read more...', user_post_path(post.user_id, post), class: 'read-more text-right'
+.row
+  .col-xs-12.col-xs-offset-4
+    = will_paginate posts, renderer: BootstrapPagination::Rails
 
 

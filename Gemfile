@@ -35,6 +35,8 @@ gem 'pry-rails'
 gem 'rmagick'
 gem 'rubocop', '~> 0.52.1'
 gem 'whenever', require: false
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
