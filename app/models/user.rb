@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :confirmable, :omniauthable, omniauth_providers: %i[google_oauth2]
 
   has_many :posts
+  has_many :comments
 
   before_save :send_welcome_email
   after_initialize :default_values

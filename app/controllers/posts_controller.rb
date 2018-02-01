@@ -1,12 +1,15 @@
 class PostsController < ApplicationController
   expose :post
   expose :posts
+  expose :comment
+  expose :comment
 
   def index
   end
 
   def show
     @post = post.decorate
+    @comment = Comment.new(comment_params)
   end
 
   def new
@@ -44,5 +47,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :content) if params[:post]
+  end
+
+  def comment_params
+    params.require(:comment).permit(:content, :post_id) if params[:comment]
   end
 end

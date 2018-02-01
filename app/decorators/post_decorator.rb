@@ -1,4 +1,5 @@
 class PostDecorator < Draper::Decorator
+  decorates_association :comments
   delegate_all
 
   def written_at
