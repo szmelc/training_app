@@ -14,6 +14,10 @@ class UserDecorator < Draper::Decorator
   end
 
   def avatar
-    h.image_tag object.avatar.medium.url, title: 'Avatar', class: 'user-avatar' if object.avatar?
+    if object.avatar?
+      h.image_tag object.avatar.medium.url, title: 'Avatar', class: 'user-avatar'
+    else
+      h.image_tag 'default_avatar'
+    end
   end
 end

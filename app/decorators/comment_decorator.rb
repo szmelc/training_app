@@ -10,8 +10,11 @@ class CommentDecorator < ApplicationDecorator
   end
 
   def user_avatar
-    # h.image_tag object.avatar.medium.url, title: 'Avatar', class: 'user-avatar' if object.avatar?
-    h.image_tag object.user.avatar.medium.url if object.user.avatar?
+    if object.user.avatar?
+      h.image_tag object.user.avatar.medium.url
+    else
+      h.image_tag 'default_avatar'
+    end
   end
 
 end
