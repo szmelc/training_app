@@ -1,0 +1,16 @@
+.div.container
+  .row
+    .col-sm-1
+      .thumbnail
+        = link_to user_path(comment.user) do
+          = comment.user_avatar
+    .col-sm-7
+      .panel.panel-default
+        .panel-heading
+          %strong= comment.author
+          %span.text-muted= comment.commented_at
+          - if comment.user == current_user
+            = link_to post_comment_path(comment.post, comment), method: :delete, data: { confirm: 'Are you sure?' } do
+              %span.glyphicon.glyphicon-remove.pull-right
+        .panel-body
+          = comment.content

@@ -4,9 +4,6 @@ class PostsController < ApplicationController
   expose :comment
   expose :comment
 
-  def index
-  end
-
   def show
     @post = post.decorate
     @comment = Comment.new(comment_params)

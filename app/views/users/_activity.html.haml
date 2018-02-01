@@ -5,4 +5,8 @@
   %li.list-group-item.text-right
     %span.pull-left
       %strong Posts
-    = user.posts.count
+    = user.posts_count
+  %li.list-group-item.text-right
+    %span.pull-left
+      %strong Comments
+    = user.comments_count
