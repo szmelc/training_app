@@ -8,7 +8,10 @@ class User < ApplicationRecord
   has_many :comments
 
   before_save :send_welcome_email
+
   after_initialize :default_values
+
+  after_save :skip_confirmation_in_test_env
 
   TITLES = [
     'Junior Ruby on Rails Developer',
@@ -53,5 +56,11 @@ class User < ApplicationRecord
     @user = self
     # puts 'Sending welcome email...'
     WelcomeEmailWorker.perform_in(2, @user) if self.confirmed_at_changed?
+  end
+
+  def skip_confirmation_in_test_env
+    if ENV['RAILS_ENV'] == 'test'
+      self.skip_confirmation!
+    end
   end
 end

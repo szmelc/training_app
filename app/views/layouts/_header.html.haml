@@ -7,8 +7,8 @@
     .div.collapse.navbar-collapse#bs-example-navbar-collapse-1
       %ul.nav.navbar-nav.navbar-right
         %li.active
-          %li= link_to 'Main Page', root_path
+          %li.main= link_to 'Main Page', root_path
           - if user_signed_in?
-            %li= link_to current_user.name, user_path(current_user)
-            %li= link_to 'New Post', new_post_path(current_user)
-            %li= link_to 'Sign out', destroy_user_session_path, method: :delete
+            %li.menu= link_to current_user.name, user_path(current_user)
+            %li.new-post= link_to 'New Post', new_post_path(current_user)
+            %li.signout= link_to 'Sign out', destroy_user_session_path, method: :delete

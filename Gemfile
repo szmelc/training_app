@@ -40,12 +40,14 @@ gem 'will_paginate-bootstrap'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13'
+  gem 'capybara'
   gem 'cicero', '~> 0.0.1'
   gem 'factory_bot', '~> 4.8', '>= 4.8.2'
   gem 'rspec', '~> 3.7'
   gem 'rspec-rails', '~> 3.7', '>= 3.7.2'
   gem 'selenium-webdriver'
+  gem 'shoulda-matchers', '~> 3.1'
+  gem 'site_prism'
 end
 
 group :development do

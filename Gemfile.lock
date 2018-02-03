@@ -845,6 +845,8 @@ GEM
     selenium-webdriver (3.8.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    shoulda-matchers (3.1.2)
+      activesupport (>= 4.0.0)
     sidekiq (5.0.5)
       concurrent-ruby (~> 1.0)
       connection_pool (~> 2.2, >= 2.2.0)
@@ -853,6 +855,9 @@ GEM
     simple_form (3.5.0)
       actionpack (> 4, < 5.2)
       activemodel (> 4, < 5.2)
+    site_prism (2.9)
+      addressable (>= 2.3.3, < 3.0)
+      capybara (>= 2.1, < 3.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-watcher-listen (2.0.1)
@@ -906,7 +911,7 @@ DEPENDENCIES
   bootstrap-sass
   byebug
   cancancan (~> 2.1, >= 2.1.3)
-  capybara (~> 2.13)
+  capybara
   carrierwave (~> 1.0)
   chartkick
   cicero (~> 0.0.1)
@@ -932,8 +937,10 @@ DEPENDENCIES
   rubocop (~> 0.52.1)
   sass-rails (~> 5.0)
   selenium-webdriver
+  shoulda-matchers (~> 3.1)
   sidekiq
   simple_form (~> 3.5)
+  site_prism
   spring
   spring-watcher-listen (~> 2.0.0)
   sqlite3
