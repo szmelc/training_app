@@ -4,9 +4,10 @@ every 1.day, at: "23:59 pm" do
   rake "report:posts_daily", environment: 'development'
 end
 
-# every "59 23 L * *" do
-#   rake "report:posts_daily", environment: 'development'
-# end
+
+every 1.month, at: "00:00 am" do
+  rake "report:posts_monthly", environment: 'development'
+end
 
 # Use this file to easily define all of your cron jobs.
 #

@@ -18,6 +18,7 @@ ActiveAdmin.register User do
     column :title
     column :website
     column :phone_number
+    column :posts_count
     column :admin
   end
 end

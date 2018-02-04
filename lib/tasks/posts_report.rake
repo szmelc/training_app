@@ -13,8 +13,8 @@ namespace :report do
     number_of_posts = PostsQuery.new.posted_this_month.count
     MonthlyPostsCount.create(
       count: number_of_posts,
-      month: Date.today.strftime("%B"),
-      date: Date.today
+      month: Date.yesterday.strftime("%B"),
+      date: Date.yesterday
     )
   end
 end

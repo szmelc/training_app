@@ -24,6 +24,6 @@ class PostsQuery
   end
 
   def this_month
-    Date.today.beginning_of_month..Date.today.end_of_month
+    Date.yesterday.beginning_of_month..Date.yesterday.end_of_month
   end
 end

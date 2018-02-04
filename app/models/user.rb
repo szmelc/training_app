@@ -21,8 +21,8 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
-  validates :title, inclusion: { in: TITLES }
-  validates :country, inclusion: { in: CountrySelectInput::LIST }
+  # validates :title, inclusion: { in: TITLES }
+  # validates :country, inclusion: { in: CountrySelectInput::LIST }
 
   def is_not_google_account?
     provider != 'google_oauth2'
