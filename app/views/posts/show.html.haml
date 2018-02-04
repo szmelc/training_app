@@ -7,7 +7,7 @@
     %p= @post.content
     .text-right
       %h5= link_to @post.author, user_path(@post.user_id)
-      - if current_user.id == post.user_id
+      - if current_user == post.user
         .btn.btn-danger
           = link_to 'Destroy', user_post_path(@post.user, @post), method: :delete, data: { confirm: 'Are you sure?' }
         .btn.btn-primary

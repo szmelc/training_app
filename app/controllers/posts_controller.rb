@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   expose :post
   expose :posts
   expose :comment
-  expose :comment
 
   def show
     @post = post.decorate
@@ -17,7 +16,7 @@ class PostsController < ApplicationController
     @post = current_user.posts.build(post_params)
     if @post.save
       flash[:notice] = "Post successfully created"
-      redirect_to user_path(current_user)
+      redirect_to user_post_path(current_user, @post)
     else
       flash[:notice] = 'Dupa'
       render 'new'
