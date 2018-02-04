@@ -1,6 +1,5 @@
 class CommentsController < ApplicationController
   before_action :set_post
-  load_and_authorize_resource :comment, through: :post
   expose :comment
 
   def new
