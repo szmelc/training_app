@@ -1,12 +1,12 @@
 class CommentsController < ApplicationController
   before_action :set_post
+  load_and_authorize_resource :comment, through: :post
   expose :comment
 
   def new
   end
 
   def create
-    comment = Comment.create(comment_params)
     if comment.save
       refresh_page
     end
@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
 
   def destroy
     refresh_page if comment.destroy
-
   end
 
   private

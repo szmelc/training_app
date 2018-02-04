@@ -3,7 +3,7 @@
   .row
     .col-sm-10
       %h1= @user.name
-      - if current_user == @user
+      - if can? :manage, user
         = button_to 'Edit profile', edit_user_registration_path, class: 'btn btn-success', method: :get
     .col-sm-2
       = @user.avatar
@@ -13,13 +13,5 @@
       = render 'bio'
       = render 'website'
       = render 'activity'
-      / .panel.panel-default
-      /   .panel-heading Social Media
-      /   .panel-body
-      /     %i.fa.fa-facebook.fa-2x
-      /     %i.fa.fa-github.fa-2x
-      /     %i.fa.fa-twitter.fa-2x
-      /     %i.fa.fa-pinterest.fa-2x
-      /     %i.fa.fa-google-plus.fa-2x
     .col-sm-9
       = render 'recent_posts'

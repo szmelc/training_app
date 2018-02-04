@@ -9,7 +9,7 @@
         .panel-heading
           %strong= comment.author
           %span.text-muted= comment.commented_at
-          - if comment.user == current_user
+          - if can? :manage, comment
             = link_to post_comment_path(comment.post, comment), method: :delete, data: { confirm: 'Are you sure?' } do
               %span.glyphicon.glyphicon-remove.pull-right
         .panel-body

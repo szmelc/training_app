@@ -1,7 +1,6 @@
 class PostsController < ApplicationController
   expose :post
   expose :posts
-  expose :comment
 
   def show
     @post = post.decorate
@@ -18,15 +17,17 @@ class PostsController < ApplicationController
       flash[:notice] = "Post successfully created"
       redirect_to user_post_path(current_user, @post)
     else
-      flash[:notice] = 'Dupa'
+      flash[:notice] = 'Post could not be saved.'
       render 'new'
     end
   end
 
   def edit
+    authorize! :edit, post
   end
 
   def update
+    authorize! :update, post
     if post.update(post_params)
       redirect_to user_post_path(current_user, post)
     else
@@ -35,6 +36,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
+    authorize! :destroy, post
     post.destroy
     redirect_to user_path(current_user)
   end
