@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 gem 'activeadmin'
 gem 'awesome_print', require: 'ap'
 gem 'aws-sdk', '~> 3.0', '>= 3.0.1'
@@ -18,6 +17,7 @@ gem 'devise', '~> 4.4', '>= 4.4.1'
 gem 'draper', '~> 3.0', '>= 3.0.1'
 gem 'faker'
 gem 'fog'
+gem 'fog-aws'
 gem 'haml', '~> 5.0', '>= 5.0.4'
 gem 'jquery-rails'
 gem 'rails', '~> 5.1.4'
