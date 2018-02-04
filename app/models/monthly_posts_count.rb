@@ -3,4 +3,5 @@ class MonthlyPostsCount < ApplicationRecord
   validates :date, presence: true
   validates :month, presence: true
   validates_uniqueness_of :date
+  validates_uniqueness_of :month
 end

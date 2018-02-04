@@ -1,20 +1,15 @@
 class RegistrationsController < Devise::RegistrationsController
   def update
-    @user = User.find(current_user.id)
-
-    if @user.update_without_password(user_params)
-      sign_in @user, :bypass_sign_in => true
-      redirect_to user_path(@user)
+    user = User.find(current_user.id)
+    if user.update_without_password(user_params)
+      sign_in user, :bypass_sign_in => true
+      redirect_to user_path(user)
     else
       render "edit"
     end
   end
 
   private
-
-  def is_google_account?
-    @user.provider == 'google_oauth2'
-  end
 
   def user_params
     params.require(:user).permit(

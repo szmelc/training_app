@@ -3,6 +3,8 @@
     .text-right
       %p= @post.written_at
     %h1= @post.title
+    -if @post.created_at != @post.updated_at
+      %p (edited)
   .panel-content.post-content
     %p= @post.content
     .text-right

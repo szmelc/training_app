@@ -43,7 +43,7 @@ class CountrySelectInput < SimpleForm::Inputs::CollectionInput
     'United States',
   ].freeze
 
-  LIST = (POPULAR_COUNTRIES + ALL_COUNTRIES).uniq
+  LIST = (POPULAR_COUNTRIES + ALL_COUNTRIES.sort).uniq
 
   def input
     @builder.input(:country, collection: CountrySelectInput::LIST, label: false)

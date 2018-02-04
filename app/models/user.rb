@@ -9,8 +9,6 @@ class User < ApplicationRecord
 
   before_save :send_welcome_email
 
-  after_initialize :default_values
-
   after_save :skip_confirmation_in_test_env
 
   TITLES = [
@@ -25,11 +23,6 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :title, inclusion: { in: TITLES }
   validates :country, inclusion: { in: CountrySelectInput::LIST }
-
-  def default_values
-    self.title = TITLES[0]
-    self.country = 'Poland'
-  end
 
   def is_not_google_account?
     provider != 'google_oauth2'

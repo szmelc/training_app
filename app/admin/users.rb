@@ -10,4 +10,14 @@ ActiveAdmin.register User do
       :admin
     ]
   end
+
+  index do
+    column :id
+    column :name
+    column :country
+    column :title
+    column :website
+    column :phone_number
+    column :admin
+  end
 end
