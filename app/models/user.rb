@@ -21,8 +21,6 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :email, presence: true
-  # validates :title, inclusion: { in: TITLES }
-  # validates :country, inclusion: { in: CountrySelectInput::LIST }
 
   def is_not_google_account?
     provider != 'google_oauth2'
@@ -46,9 +44,8 @@ class User < ApplicationRecord
   end
 
   def send_welcome_email
-    @user = self
-    # puts 'Sending welcome email...'
-    WelcomeEmailWorker.perform_in(2, @user) if self.confirmed_at_changed?
+    puts 'sending....'
+    WelcomeEmailWorker.perform_in(2, self.email) if self.confirmed_at_changed?
   end
 
   def skip_confirmation_in_test_env

@@ -1,8 +1,8 @@
 class RegistrationMailer < ApplicationMailer
 
-  def welcome_email(user)
+  def welcome_email(email)
     mail(
-      to: user.email,
+      to: email,
       subject: 'Welcome to My Awesome Site'
     )
   end
