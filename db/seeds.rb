@@ -47,7 +47,7 @@ AVATARS = [
   user = User.new(
           name: Faker::Name.name,
           email: Faker::Internet.email,
-          password: PASSWORD,
+          password: 'TestPass',
           title: 'Junior Ruby on Rails Developer',
           country: 'Poland',
           bio: Faker::ChuckNorris.fact,
