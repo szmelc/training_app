@@ -45,7 +45,7 @@ class User < ApplicationRecord
 
   def send_welcome_email
     puts 'sending....'
-    WelcomeEmailWorker.perform_in(2, self.email) if self.confirmed_at_changed?
+    WelcomeEmailWorker.perform_in(2, self.id) if self.confirmed_at_changed?
   end
 
   def skip_confirmation_in_test_env
