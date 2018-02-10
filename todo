@@ -1,0 +1,28 @@
+Do zrobienia:
+- style w mailach od Devise
+- przyciski zamiast linków w rejestracji
+- null objecty dla usera
+- if.user.posts.any?
+- usuń tego ifa z dekoratora
+- custom input dla website
+- AJAX calls for comments and posts
+- raporty o komentarzach
+- tagi w postach
+
+- ADMIN CAN MANAGE POSTS COMMENTS AND USERS FROM WITHIN THE APP AND ADMIN PANEL
+
+
+Poczytaj o serializerach
+doorkeeper?
+
+
+
+Issues:
+  - edycja hasła dla użytkowników zalogowanych przez omniauth; trzeba określić dozwolone paramsy (nadpisać registrations_controller#update)
+  - edycja użytkownika w active_admin (zainstaliować country_gem) czy nie?
+
+
+Feature'y
+
+- active_admin zakaz tworzenia daily_posts_count (aby nie fałszować)
+- remove default comments

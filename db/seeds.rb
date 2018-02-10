@@ -59,41 +59,71 @@ AVATARS = [
 end
 
 3.times do
-  Post.create(content: POST_CONTENT, title: Faker::RockBand.name, user_id: 1)
+  Post.create(
+    content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 1,
+    created_at: Date.today - 7)
   print '.'
 end
 
 2.times do
-  Post.create(content: POST_CONTENT, title: Faker::RockBand.name, user_id: 2)
+  Post.create(content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 2,
+    created_at: Date.today - 6)
   print '.'
 end
 
 4.times do
-  Post.create(content: POST_CONTENT, title: Faker::RockBand.name, user_id: 3)
+  Post.create(content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 3,
+    created_at: Date.today - 5)
   print '.'
 end
 
 3.times do
-  Post.create(content: POST_CONTENT, title: Faker::RockBand.name, user_id: 4)
+  Post.create(content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 4,
+    created_at: Date.today - 4)
   print '.'
 end
 
 4.times do
-  Post.create(content: POST_CONTENT, title: Faker::RockBand.name, user_id: 5)
+  Post.create(content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 5,
+    created_at: Date.today - 3)
   print '.'
 end
 
 3.times do
-  Post.create(content: POST_CONTENT, title: Faker::RockBand.name, user_id: 6)
+  Post.create(content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 6,
+    created_at: Date.today - 2)
   print '.'
 end
 
 3.times do
-  Post.create(content: POST_CONTENT, title: Faker::RockBand.name, user_id: 7)
+  Post.create(content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 7,
+    created_at: Date.today - 1)
   print '.'
 end
 
-80.times do
+4.times do
+  Post.create(content: POST_CONTENT,
+    title: Faker::RockBand.name,
+    user_id: 7,
+    created_at: Date.today)
+  print '.'
+end
+
+90.times do
   num = Random.new
   Comment.create(content: COMMENT_CONTENT, user_id: num.rand(7), post_id: num.rand(22))
   print '.'
