@@ -1,8 +1,5 @@
 Do zrobienia:
-- style w mailach od Devise
 - przyciski zamiast linków w rejestracji
-- null objecty dla usera
-- if.user.posts.any?
 - usuń tego ifa z dekoratora
 - custom input dla website
 - AJAX calls for comments and posts
@@ -26,3 +23,20 @@ Feature'y
 
 - active_admin zakaz tworzenia daily_posts_count (aby nie fałszować)
 - remove default comments
+- CANCANCAN:
+    - admin usuwa i edytuje wszystkie posty / autor tylko swoje
+    - admin edytuje wszystkich userów, user tylko siebie
+- null objecty
+
+
+Testy:
+mailer devise
+mailer po rejestracji
+
+Feature testy:
+dodawanie postow
+dodawanie komentarzy
+edycja danych osobowych
+wyświetlanie postow na profilu użytkownika
+możliwość edycji siebie a nie kogoś innego
+możliwość edycji tylk swojego posta / admin wszystko

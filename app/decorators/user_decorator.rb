@@ -2,7 +2,7 @@ class UserDecorator < Draper::Decorator
   delegate_all
 
   def title
-    object.title
+    object.title || NullUser.title
   end
 
   def joined
@@ -15,9 +15,13 @@ class UserDecorator < Draper::Decorator
 
   def avatar
     if object.avatar?
-      h.image_tag object.avatar.medium.url, title: 'Avatar', class: 'user-avatar'
+      h.image_tag object.avatar.medium.url, title: 'Avatar', class: 'user-avatar' || NullUser.avatar
     else
       h.image_tag 'default_avatar'
     end
+  end
+
+  def user_bio
+    object.bio || NullUser.bio
   end
 end

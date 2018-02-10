@@ -5,7 +5,10 @@ class PostRequestWorker < ApplicationMailer
     3
   end
 
-  def perform(post_body, user_id)
+  def perform(post_id)
+    post = Post.find(post_id)
+    post_body = post.content
+    user_id = post.user_id
     response = HTTParty.post('http://localhost:9292/api/',
     :query => {
       post_body: post_body,

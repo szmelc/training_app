@@ -19,7 +19,6 @@ namespace :report do
   end
 end
 
-
 private
 
 def last_month

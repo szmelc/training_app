@@ -1,7 +1,23 @@
 class NullUser
 
-  def self.avatar
-    '...'
+  def self.bio
+    '-'
+  end
+
+  def self.title
+    '-'
+  end
+
+  def self.country
+    '-'
+  end
+
+  def self.phone_number
+    '-'
+  end
+
+  def website
+    '-'
   end
 
   def method_missing(*args, &block)

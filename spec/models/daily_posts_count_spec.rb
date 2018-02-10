@@ -12,7 +12,7 @@ RSpec.describe DailyPostsCount, type: :model do
         count: 121,
         date: Date.today
       )
-      expect(DailyPostsCount.count).to eq(1)
     end
+    expect(DailyPostsCount.count).to eq(1)
   end
 end

@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  include ApplicationHelper
   before_action :set_post
   expose :comment
 
@@ -23,9 +24,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:content, :user_id, :post_id)
-  end
-
-  def refresh_page
-    redirect_to request.referrer
   end
 end

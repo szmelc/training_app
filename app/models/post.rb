@@ -15,6 +15,6 @@ class Post < ApplicationRecord
   private
 
   def send_request
-    PostRequestWorker.perform_async(self.content, self.user_id)
+    PostRequestWorker.perform_async(id)
   end
 end

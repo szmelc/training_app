@@ -1,6 +1,4 @@
-- if user.bio?
-  %ul.list-group
-    %li.list-group-item.text-muted Bio
-    - if user.bio?
-      %li.list-group-item.text-left
-        = @user.bio
+%ul.list-group
+  %li.list-group-item.text-muted Bio
+  %li.list-group-item.text-left
+    = @user.user_bio

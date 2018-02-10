@@ -46,7 +46,7 @@ class CountrySelectInput < SimpleForm::Inputs::CollectionInput
   LIST = (POPULAR_COUNTRIES + ALL_COUNTRIES.sort).uniq
 
   def input
-    @builder.input(:country, collection: CountrySelectInput::LIST, label: false)
+    @builder.input(attribute_name, collection: CountrySelectInput::LIST, label: false)
   end
 end
 

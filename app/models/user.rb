@@ -4,11 +4,14 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable, :omniauthable, omniauth_providers: %i[google_oauth2]
 
+
+  validates :name, presence: true
+  validates :email, presence: true
+
   has_many :posts
   has_many :comments
 
   before_save :send_welcome_email
-
   after_save :skip_confirmation_in_test_env
 
   TITLES = [
@@ -18,9 +21,6 @@ class User < ApplicationRecord
     'Front-end Developer',
     'Head of Technology'
   ]
-
-  validates :name, presence: true
-  validates :email, presence: true
 
   def is_not_google_account?
     provider != 'google_oauth2'
@@ -44,8 +44,7 @@ class User < ApplicationRecord
   end
 
   def send_welcome_email
-    puts 'sending....'
-    WelcomeEmailWorker.perform_in(2, self.id) if self.confirmed_at_changed?
+    WelcomeEmailWorker.perform_in(2, id) if confirmed_at_changed?
   end
 
   def skip_confirmation_in_test_env

@@ -1,20 +1,17 @@
 %ul.list-group
   %li.list-group-item.text-muted Profile
-  - if user.country?
-    %li.list-group-item.text-right
-      %span.pull-left
-        %strong Country
-      = @user.country
-  - if user.phone_number?
-    %li.list-group-item.text-right
-      %span.pull-left
-        %strong Phone
-      = @user.phone_number
-  - if user.title?
-    %li.list-group-item.text-right
-      %span.pull-left
-        %strong Title
-      = @user.title
+  %li.list-group-item.text-right
+    %span.pull-left
+      %strong Country
+    = @user.country || NullUser.country
+  %li.list-group-item.text-right
+    %span.pull-left
+      %strong Phone
+    = @user.phone_number || NullUser.phone_number
+  %li.list-group-item.text-right
+    %span.pull-left
+      %strong Title
+    = @user.title
   %li.list-group-item.text-right
     %span.pull-left
       %strong Joined

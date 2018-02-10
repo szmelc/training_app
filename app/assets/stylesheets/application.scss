@@ -21,3 +21,18 @@
 .btn a {
   color: white;
 }
+
+.btn-google {
+  width: 150px;
+  padding: 0;
+}
+
+.shared-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alert {
+  text-align: center;
+}

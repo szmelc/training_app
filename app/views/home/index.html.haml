@@ -1,18 +1,20 @@
-- posts.each do |post|
-  .panel.panel-default
-    .panel-heading
-      %h5= link_to post.title, user_post_path(post.user_id, post)
-    .panel-content.post-content
-      %p= post.content
-      .row.text-right.col-xs-offset-10
-        = link_to 'Read more...', user_post_path(post.user_id, post), class: 'read-more text-right'
-      .row.text-right.col-xs-offset-10
-        %p.text-right.read-more
-          = post.comments_count
-          = 'comment'.pluralize(post.comments_count)
+.posts
+  - posts.each do |post|
+    .post{ id: "post-#{post.id}" }
+      .panel.panel-default
+        .panel-heading.post-title
+          %h5= link_to post.title, user_post_path(post.user_id, post)
+        .panel-content.post-content
+          %p= post.content
+          .row.text-right.col-xs-offset-10
+            = link_to 'Read more...', user_post_path(post.user_id, post), class: 'read-more text-right'
+          .row.text-right.col-xs-offset-10
+            %p.text-right.read-more
+              = post.comments_count
+              = 'comment'.pluralize(post.comments_count)
 
-.row
-  .col-xs-12.col-xs-offset-4
-    = will_paginate posts, renderer: BootstrapPagination::Rails
+  .row
+    .col-xs-12.col-xs-offset-4
+      = will_paginate posts, renderer: BootstrapPagination::Rails
 
 
