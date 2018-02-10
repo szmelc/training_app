@@ -1,9 +1,35 @@
-<%= column_chart [
-  [(Date.today - 7).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 7).count],
-  [(Date.today - 6).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 6).count],
-  [(Date.today - 5).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 5).count],
-  [(Date.today - 4).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 4).count],
-  [(Date.today - 3).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 3).count],
-  [(Date.today - 2).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 2).count],
-  [(Date.today - 1).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 1).count],
-  ], stacked: true, library: {colors: ["#4286f4"]} %>
+<h1>Daily Posts Report</h1>
+<% if DailyPostsCount.any? %>
+  <%= column_chart [
+    [(Date.today - 7).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 7).count],
+    [(Date.today - 6).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 6).count],
+    [(Date.today - 5).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 5).count],
+    [(Date.today - 4).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 4).count],
+    [(Date.today - 3).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 3).count],
+    [(Date.today - 2).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 2).count],
+    [(Date.today - 1).strftime("%A, %Y-%m-%d"), DailyPostsCount.find_by(date: Date.today - 1).count],
+    ], stacked: true, library: {colors: ["#4286f4"]} %>
+<% else %>
+  <h4>Nothing to show...</h4>
+<% end %>
+<h1>Monthly Posts Report in <%= Date.today.strftime("%Y") %></h1>
+<% if MonthlyPostsCount.any? %>
+  <%= column_chart [
+    [["January"], MonthlyPostsCount.find_by(month: "January").try(:count)],
+    [["February"], MonthlyPostsCount.find_by(month: "February").try(:count)],
+    [["March"], MonthlyPostsCount.find_by(month: "March").try(:count)],
+    [["April"], MonthlyPostsCount.find_by(month: "April").try(:count)],
+    [["May"], MonthlyPostsCount.find_by(month: "May").try(:count)],
+    [["June"], MonthlyPostsCount.find_by(month: "June").try(:count)],
+    [["July"], MonthlyPostsCount.find_by(month: "July").try(:count)],
+    [["August"], MonthlyPostsCount.find_by(month: "August").try(:count)],
+    [["September"], MonthlyPostsCount.find_by(month: "September").try(:count)],
+    [["October"], MonthlyPostsCount.find_by(month: "October").try(:count)],
+    [["November"], MonthlyPostsCount.find_by(month: "November").try(:count)],
+    [["November"], MonthlyPostsCount.find_by(month: "November").try(:count)],
+    [["December"], MonthlyPostsCount.find_by(month: "December").try(:count)]
+    ], stacked: true, library: {colors: ["#4286f4"]} %>
+
+<% else %>
+  <h4>Nothing to show...</h4>
+<% end %>

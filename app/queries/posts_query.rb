@@ -5,12 +5,13 @@ class PostsQuery
     @relation = relation
   end
 
-  def posted_today
-    relation.where(created_at: today)
+  def posted_yesterday
+    relation.where(created_at: yesterday)
   end
 
-  def posted_this_month
-    relation.where(created_at: this_month)
+  def posted_last_month
+    return unless Date.today.strftime("%d") != "01"
+    relation.where(created_at: last_month)
   end
 
   def with_user
@@ -19,11 +20,11 @@ class PostsQuery
 
   private
 
-  def today
-    Date.today.beginning_of_day..Date.today.end_of_day
+  def yesterday
+    Date.yesterday.beginning_of_day..Date.yesterday.end_of_day
   end
 
-  def this_month
+  def last_month
     Date.yesterday.beginning_of_month..Date.yesterday.end_of_month
   end
 end

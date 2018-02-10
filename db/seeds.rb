@@ -58,6 +58,15 @@ AVATARS = [
   print '.'
 end
 
+42.times do
+  Post.create(
+      content: POST_CONTENT,
+      title: Faker::RockBand.name,
+      user_id: 1,
+      created_at: Date.new(2018, 1, 23))
+    print '.'
+end
+
 3.times do
   Post.create(
     content: POST_CONTENT,
@@ -128,3 +137,8 @@ end
   Comment.create(content: COMMENT_CONTENT, user_id: num.rand(7), post_id: num.rand(22))
   print '.'
 end
+
+DailyPostsCount.create(count: 42, date: Date.new(2018, 1, 23))
+MonthlyPostsCount.create(count: 42, month: "January", date: Date.new(2018, 1, 31))
+
+
