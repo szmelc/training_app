@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 POST_CONTENT = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.
   Nunc sit amet ullamcorper neque. Sed quis orci tortor. Nam libero lorem,
   iaculis sit amet dapibus nec, vulputate quis nisl. Quisque venenatis finibus
@@ -140,5 +132,3 @@ end
 
 DailyPostsCount.create(count: 42, date: Date.new(2018, 1, 23))
 MonthlyPostsCount.create(count: 42, month: "January", date: Date.new(2018, 1, 31))
-
-

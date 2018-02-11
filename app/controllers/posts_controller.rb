@@ -14,7 +14,6 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
-      binding.pry
       flash[:notice] = 'Post successfully created'
       redirect_to user_post_path(current_user, @post)
     else
