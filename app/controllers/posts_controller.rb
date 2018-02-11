@@ -14,6 +14,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(post_params)
     if @post.save
+      binding.pry
       flash[:notice] = 'Post successfully created'
       redirect_to user_post_path(current_user, @post)
     else
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content) if params[:post]
+    params.require(:post).permit(:title, :content, :all_tags) if params[:post]
   end
 
   def comment_params

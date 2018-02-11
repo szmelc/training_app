@@ -8,5 +8,11 @@ class HomeController < ApplicationController
       )
     }
 
-  def index; end
+  def index
+    if params[:tag]
+      @posts = posts.tagged_with(params[:tag])
+    else
+      @posts = posts
+    end
+  end
 end

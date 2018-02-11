@@ -11,6 +11,10 @@
           = f.label :content, class: 'col-sm-2 control-label'
           .col-sm-5
             = f.input :content, class: 'form-control post-content-input', label: false
+        .form-group.row
+          = f.label :all_tags, class: 'col-sm-2 control-label'
+          .col-sm-5
+            = f.input :all_tags, placeholder: "Tags separated by comma", class: 'form-control', label: false
         .row
           .col-sm-7
             .pull-right

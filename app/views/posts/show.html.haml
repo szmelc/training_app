@@ -7,6 +7,8 @@
       %p (edited)
   .panel-content.post-content
     %p= @post.content
+    .row.content
+      = raw tag_links(@post.all_tags)
     .text-right
       %h5= link_to @post.author, user_path(@post.user_id)
       - if can? :manage, post
