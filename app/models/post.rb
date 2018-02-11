@@ -1,6 +1,5 @@
 class Post < ApplicationRecord
   include HTTParty
-  require 'net/http'
   default_scope { order(created_at: :desc ) }
 
   belongs_to :user, counter_cache: true

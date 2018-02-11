@@ -6,14 +6,14 @@
         .form-group.row
           = f.label :title, class: 'col-sm-2 control-label'
           .col-sm-5
-            = f.input :title, :autofocus => true, class: 'form-control', label: false
+            = f.input :title, :autofocus => true, class: 'form-control post-title-input', label: false
         .form-group.row
           = f.label :content, class: 'col-sm-2 control-label'
           .col-sm-5
-            = f.input :content, class: 'form-control', label: false
+            = f.input :content, class: 'form-control post-content-input', label: false
         .row
           .col-sm-7
             .pull-right
-              = f.submit "Post", class: 'btn btn-success'
+              = f.submit "Post", class: 'btn btn-success btn-post'
 
 

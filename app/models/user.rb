@@ -12,7 +12,7 @@ class User < ApplicationRecord
   has_many :comments
 
   before_save :send_welcome_email
-  after_save :skip_confirmation_in_test_env
+  before_save :skip_confirmation_in_test_env
 
   TITLES = [
     'Junior Ruby on Rails Developer',

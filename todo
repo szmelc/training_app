@@ -1,12 +1,8 @@
 Do zrobienia:
-- przyciski zamiast linków w rejestracji
-- usuń tego ifa z dekoratora
-- custom input dla website
 - AJAX calls for comments and posts
 - raporty o komentarzach
 - tagi w postach
 
-- ADMIN CAN MANAGE POSTS COMMENTS AND USERS FROM WITHIN THE APP AND ADMIN PANEL
 
 
 Poczytaj o serializerach
@@ -17,6 +13,8 @@ doorkeeper?
 Issues:
   - edycja hasła dla użytkowników zalogowanych przez omniauth; trzeba określić dozwolone paramsy (nadpisać registrations_controller#update)
   - edycja użytkownika w active_admin (zainstaliować country_gem) czy nie?
+  - omijanie aktywacji dla użytkowników w testach
+  - custom input na stronę i kraj
 
 
 Feature'y
@@ -29,14 +27,3 @@ Feature'y
 - null objecty
 
 
-Testy:
-mailer devise
-mailer po rejestracji
-
-Feature testy:
-dodawanie postow
-dodawanie komentarzy
-edycja danych osobowych
-wyświetlanie postow na profilu użytkownika
-możliwość edycji siebie a nie kogoś innego
-możliwość edycji tylk swojego posta / admin wszystko
