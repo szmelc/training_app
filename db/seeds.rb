@@ -50,7 +50,7 @@ AVATARS = [
   print '.'
 end
 
-42.times do
+9.times do
   Post.create(
       content: POST_CONTENT,
       title: Faker::RockBand.name,

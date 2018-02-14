@@ -12,9 +12,8 @@
             %p.text-right.read-more
               = post.comments_count
               = 'comment'.pluralize(post.comments_count)
-          .row
-            %strong.tags Tags:
-            = raw tag_links(post.all_tags)
+          %strong.tags Tags:
+          = raw tag_links(post.all_tags)
 
   .row
     .col-xs-12.col-xs-offset-4
