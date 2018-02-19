@@ -6,7 +6,7 @@
         %h1.user-name= @user.name
         - if @user.admin?
           = image_tag "admin.png", class: "admin-badge"
-      - if can? :manage, user
+      - if current_user == user
         = button_to 'Edit profile', edit_user_registration_path, class: 'btn btn-success btn-edit', method: :get
     .col-sm-2
       = @user.avatar
